@@ -10,7 +10,7 @@ private:
 	double length, width;
 	//length = x, width = y
 
-	// double angle{};		- for problems with the rotation
+	// double angle{}; // perhaps needed to fix the problems with the rotation
 
 	void copyRect(const Rectangle& other);
 
