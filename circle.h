@@ -5,7 +5,7 @@
 
 class Circle : public Shape {
 private:
-	//ShapeType type = ShapeType::CIRCLE;	това е излишно
+	//ShapeType type = ShapeType::CIRCLE;
 	Coordinates centerPoint;
 	double radius;
 
@@ -20,7 +20,7 @@ public:
 
 	virtual void printInfo() override;
 	virtual void translateShape(const double v, const double h) override;
-	virtual void scaleShape(double c1, double c2) override; // да се използва само единия коефициент
+	virtual void scaleShape(double c1, double c2) override;
 	virtual void rotateShape(const double degree) override;
 
 	double getRadius() const;
