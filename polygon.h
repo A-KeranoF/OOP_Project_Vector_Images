@@ -5,6 +5,7 @@
 
 class Polygon : public Shape {
 private:
+	//ShapeType type = ShapeType::POLYGON
 	std::vector<Coordinates>vertexes{};
 
 	void copyPolygon(const Polygon& other);
@@ -21,6 +22,4 @@ public:
 	virtual void rotateShape(const double degree) override;
 
 };
-
-
 #endif
