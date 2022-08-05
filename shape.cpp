@@ -1,5 +1,4 @@
 #include "shape.h"
-#include <cstring>
 #include <cmath>
 
 void Shape::setID(const int id_) {
