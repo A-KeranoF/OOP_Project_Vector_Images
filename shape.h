@@ -1,8 +1,6 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 #include "attributes.h"
-#include <fstream>
-#include <iostream>
 
 class Shape {
 protected:
