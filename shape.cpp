@@ -16,7 +16,7 @@ Shape::Shape() :
 	bgColor(Color::TRANSPARENT), 
 	outline(Color::BLACK)
 {
-	// dont know how to increment the id when first made the object
+	// dont know how to increment the id when first made the object to be unique to every new object
 	setID(++nextID); 
 }
 
