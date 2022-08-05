@@ -1,6 +1,5 @@
 #ifndef ATTRIBUTES_H
 #define ATTRIBUTES_H
-#include <iostream>
 
 enum class ShapeType {
 	UNKNOWN = -1,
