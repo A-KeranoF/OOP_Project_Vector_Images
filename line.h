@@ -4,7 +4,7 @@
 
 class Line : public Shape {
 private:
-	//ShapeType type = ShapeType::LINE;	това е излишно
+	//ShapeType type = ShapeType::LINE;
 	//Color bgColor = Color::TRANSPARENT;
 	Coordinates beginPoint;
 	Coordinates endPoint;
