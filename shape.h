@@ -6,14 +6,14 @@
 
 class Shape {
 protected:
-	//ShapeType type;	това е излишно?
+	//ShapeType type;
 	Color outline;
 	Color bgColor;
 
 	unsigned int id;
 	static int nextID;
 
-	void setID(const int id_); // така ли се правеше mutable?
+	void setID(const int id_); //not sure if this is how to make a member mutable?
 
 	void copyDef(const Shape& other);
 
@@ -21,7 +21,7 @@ protected:
 public:
 	Shape();
 	virtual ~Shape();
-	Shape(const Shape& other);	// not sure if i need copy and operator for default shape
+	Shape(const Shape& other);
 	Shape& operator=(const Shape& other);
 
 	virtual void printInfo() = 0;
