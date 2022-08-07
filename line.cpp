@@ -63,7 +63,7 @@ void Line::printInfo()
 		<< colorToText(getOutline()) << std::endl;
 }
 
-void Line::translateShape(const double v, const double h)
+void Line::translateShape(double v, double h)
 {
 	beginPoint.setX(v + beginPoint.getX());
 	beginPoint.setY(h + beginPoint.getY());
