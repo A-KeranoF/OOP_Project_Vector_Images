@@ -42,7 +42,7 @@ void Polygon::printInfo()
 		<< " color:" << colorToText(getBG()) << std::endl;
 }
 
-void Polygon::translateShape(const double v, const double h)
+void Polygon::translateShape(double v, double h)
 {
 	for (int i = 0; i < vertexes.size(); i++) //
 	{
