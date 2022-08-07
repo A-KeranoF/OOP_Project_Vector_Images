@@ -6,8 +6,7 @@ class Line : public Shape {
 private:
 	//ShapeType type = ShapeType::LINE;
 	Color bgColor = Color::TRANSPARENT;
-	Coordinates beginPoint;
-	Coordinates endPoint;
+	Coordinates beginPoint, endPoint;
 
 	void copyLine(const Line& other);
 
@@ -19,7 +18,7 @@ public:
 	Line& operator=(const Line& other);
 
 	virtual void printInfo() override;
-	virtual void translateShape(const double v, const double h) override;
+	virtual void translateShape(double v, double h) override;
 	virtual void scaleShape(double c1, double c2) override;
 	virtual void rotateShape(const double degree) override;
 
