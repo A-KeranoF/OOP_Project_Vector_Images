@@ -15,7 +15,6 @@ protected:
 
 	void copyDef(const Shape& other);
 
-
 public:
 	Shape();
 	virtual ~Shape();
@@ -23,7 +22,7 @@ public:
 	Shape& operator=(const Shape& other);
 
 	virtual void printInfo() = 0;
-	virtual void translateShape(const double v, const double h) = 0;
+	virtual void translateShape(double v, double h) = 0;
 	virtual void scaleShape(double c1, double c2) = 0;
 	virtual void rotateShape(const double degree) = 0;
 
