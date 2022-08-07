@@ -67,7 +67,7 @@ void Image::translateShape(const int* id, const int v, const int h)
 void Image::scale(const double c1, const double c2)
 {
     for (int i = 0; i < layer.size(); i++) {
-        for (int j = 0; j < layer.size(); j++) {
+        for (int j = 0; j < layer[i].size(); j++) {
             layer[i][j]->scaleShape(c1, c2);
         }
     }
