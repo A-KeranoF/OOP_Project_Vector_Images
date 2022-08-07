@@ -53,9 +53,6 @@ void Polygon::translateShape(const double v, const double h)
 
 void Polygon::scaleShape(double c1, double c2) //
 {
-	/*scaling the surrounding rectangle, 
-	then reposition the points according to this rectangle*/
-
 	double fstX = INT_MAX;
 	double fstY = INT_MAX;
 	double sndX = INT_MIN;
