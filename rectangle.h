@@ -22,7 +22,7 @@ public:
 	Rectangle& operator=(const Rectangle& other);
 
 	virtual void printInfo() override;
-	virtual void translateShape(const double v, const double h) override;
+	virtual void translateShape(double v, double h) override;
 	virtual void scaleShape(double c1, double c2) override;
 	virtual void rotateShape(const double degree) override;
 
