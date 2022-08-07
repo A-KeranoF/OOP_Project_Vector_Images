@@ -87,7 +87,14 @@ std::string Shape::colorToText(Color color)
 	}
 }
 
-double Shape::angleToCenter(const Coordinates& center, const Coordinates& point)
+double Shape::angleToPoint(const Coordinates& from, const Coordinates& to)
 {
-	return atan2((point.getY() - center.getY()), (point.getX() - center.getX())) * 180 / 3.14159265;
+	return atan2((to.getY() - from.getY()), (to.getX() - from.getX())) * 180 / 3.14159265;
+}
+
+double Shape::distanceBetweenPoints(const Coordinates& from, const Coordinates& to)
+{
+	return sqrt(
+		(from.getX() - to.getX()) * (from.getX() - to.getX()) +
+		(from.getY() - to.getY()) * (from.getY() - to.getY()));
 }
