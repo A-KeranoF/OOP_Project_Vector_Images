@@ -76,8 +76,8 @@ void Polygon::scaleShape(double c1, double c2) //
 			sndY = vertexes[i].getY();
 	}
 
-	double rectLength = fstX - sndX;
-	double rectWidth = fstY - sndY;
+	double rectLength = abs(fstX - sndX);
+	double rectWidth = abs(fstY - sndY);
 
 	double ratioLength = (rectLength * c1) / rectLength;
 	double ratioWidth = (rectWidth * c2) / rectWidth;
