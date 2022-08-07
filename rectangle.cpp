@@ -61,7 +61,7 @@ void Rectangle::printInfo()
 		<< " color:" << colorToText(getOutline()) << std::endl;
 }
 
-void Rectangle::translateShape(const double v, const double h)
+void Rectangle::translateShape(double v, double h)
 {
 	corner.setX(v + corner.getX());
 	corner.setY(h + corner.getY());
