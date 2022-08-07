@@ -76,14 +76,17 @@ void Polygon::scaleShape(double c1, double c2) //
 			sndY = vertexes[i].getY();
 	}
 
-	Coordinates downCorner{}, upCorner{};
-	downCorner.setX(fstX);
-	downCorner.setY(fstY);
+	double rectLength = fstX - sndX;
+	double rectWidth = fstY - sndY;
 
-	upCorner.setX(sndX);
-	upCorner.setY(sndY);
+	double ratioLength = (rectLength * c1) / rectLength;
+	double ratioWidth = (rectWidth * c2) / rectWidth;
 
-	// unfinished scaling: scale the points of vertexes relative to the scaled circum-rectangle
+	for (int i = 0; i < vertexes.size(); i++)
+	{
+		vertexes[i].setX(ratioLength * vertexes[i].getX());
+		vertexes[i].setY(ratioWidth * vertexes[i].getY());
+	}
 
 }
 
