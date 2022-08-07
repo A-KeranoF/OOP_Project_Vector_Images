@@ -36,7 +36,8 @@ public:
 
 	std::string colorToText(Color color);
 
-	double angleToCenter(const Coordinates& center_, const Coordinates& point);
+	double angleToPoint(const Coordinates& from, const Coordinates& to);
+	double distanceBetweenPoints(const Coordinates& from, const Coordinates& to);
 
 };
 
