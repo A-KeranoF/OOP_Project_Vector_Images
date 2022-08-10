@@ -21,9 +21,12 @@ void Image::removeShape(const int id)
         for (int j = 0; j < layer[i].size(); j++)
         {
             if (id == layer[i][j]->getID())
-            {
-                delete layer[i][j];
-                //not sure if this is how to do it
+            {                
+                Shape** pointer;
+                pointer = &layer[i][j];
+                layer[i].erase(layer[i].begin() + j);
+                delete pointer;
+                //unsure if this pointer actually points to the object
             }
         }
     }
