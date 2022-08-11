@@ -111,8 +111,7 @@ void Polygon::rotateShape(double degree)
 	centerRect.setX((fstX + sndX) / 2);
 	centerRect.setY((fstY + sndY) / 2);
 
-	double* radiuses = new double[vertexes.size() + 1];
-	// the estimation !(i < vertx.size) give the warning mentioned bellow
+	double* radiuses = new double[vertexes.size() + 1]{}; // this initialization might not be correct
 	for (int i = 0; i < vertexes.size(); ++i)
 	{
 		radiuses[i] = distanceBetweenPoints(vertexes[i], centerRect);
@@ -120,7 +119,6 @@ void Polygon::rotateShape(double degree)
 
 	for (int i = 0; i < vertexes.size(); i++)
 	{
-		// i do not know why a warning for uninitialized radiuses appears
 		vertexes[i].setX(radiuses[i] * cos(angleToPoint(centerRect, vertexes[i]) + degree));
 		vertexes[i].setY(radiuses[i] * sin(angleToPoint(centerRect, vertexes[i]) + degree));
 	}
