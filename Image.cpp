@@ -75,13 +75,13 @@ void Image::sendBackward(const int id, const int layers)
             {
                 Shape** pointer = &layer[i][j];
                 layer[i].erase(layer[i].begin() + j);
-                layer[i - layers].insert(layer[i].begin() + j, *pointer);
+                layer[i - layers].push_back(*pointer);
             }
             else
             {
                 Shape** pointer = &layer[i][j];
                 layer[i].erase(layer[i].begin() + j);
-                layer[0].insert(layer[i].begin() + j, *pointer);
+                layer[0].push_back(*pointer);
             }
         }
     }
