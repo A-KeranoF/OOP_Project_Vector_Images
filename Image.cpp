@@ -21,12 +21,10 @@ void Image::removeShape(const int id)
         for (int j = 0; j < layer[i].size(); j++)
         {
             if (id == layer[i][j]->getID())
-            {                
-                Shape** pointer;
-                pointer = &layer[i][j];
+            {
+                Shape** pointer = &layer[i][j];
                 layer[i].erase(layer[i].begin() + j);
                 delete pointer;
-                //unsure if this pointer actually points to the object
             }
         }
     }
@@ -52,11 +50,16 @@ void Image::bringForward(const int id, const int layers)
         {
             if (i + layers < layer.size())
             {
-                layer[i + layers].push_back(layer[i][j]);
+                Shape** pointer = &layer[i][j];
+                layer[i].erase(layer[i].begin() + j);
+                layer[i + layers].push_back(*pointer);
+                // i do not know if i need to delete the pointer itself and how
             }
-            else // i dont think this is correct method of moving, it is just a sample code of an idea
+            else 
             {
-                layer[layer.size()].push_back(layer[i][j]);
+                Shape** pointer = &layer[i][j];
+                layer[i].erase(layer[i].begin() + j);
+                layer[layer.size()].push_back(*pointer);
             }
         }
     }
@@ -70,11 +73,15 @@ void Image::sendBackward(const int id, const int layers)
         {
             if (i - layers > 0)
             {
-                layer[i - layers].push_back(layer[i][j]);
+                Shape** pointer = &layer[i][j];
+                layer[i].erase(layer[i].begin() + j);
+                layer[i - layers].insert(layer[i].begin() + j, *pointer);
             }
             else
             {
-                layer[0].push_back(layer[i][j]);
+                Shape** pointer = &layer[i][j];
+                layer[i].erase(layer[i].begin() + j);
+                layer[0].insert(layer[i].begin() + j, *pointer);
             }
         }
     }
@@ -91,8 +98,8 @@ void Image::translate(int v, int h)
 
 void Image::translate(const int* id, int v, int h)
 {
-    //sizeof(pointer)/sizeof(pointer[0]) throws a warning; do not know how to fix
-    for (int k = 0; k < (sizeof(id) / sizeof(id[0])); k++) {
+    int size = *(&id + 1) - id;
+    for (int k = 0; k < size; k++) {
         for (int i = 0; i < layer.size(); i++) {
             for (int j = 0; j < layer[i].size(); j++) {
                 if (id[k] == layer[i][j]->getID()) {
@@ -114,7 +121,8 @@ void Image::scale(double c1, double c2)
 
 void Image::scale(const int* id, double c1, double c2)
 {
-    for (int k = 0; k < (sizeof(id) / sizeof(id[0])); k++) {
+    int size = *(&id + 1) - id;
+    for (int k = 0; k < size; k++) {
         for (int i = 0; i < layer.size(); i++) {
             for (int j = 0; j < layer[i].size(); j++) {
                 if (id[k] == layer[i][j]->getID()) {
@@ -136,7 +144,8 @@ void Image::rotate(double degree)
 
 void Image::rotate(const int* id, double degree)
 {
-    for (int k = 0; k < (sizeof(id) / sizeof(id[0])); k++) {
+    int size = *(&id + 1) - id;
+    for (int k = 0; k < size; k++) {
         for (int i = 0; i < layer.size(); i++) {
             for (int j = 0; j < layer[i].size(); j++) {
                 if (id[k] == layer[i][j]->getID()) {
